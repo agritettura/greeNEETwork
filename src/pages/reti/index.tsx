@@ -8,14 +8,7 @@ import { directus } from "core/cli";
 import Page from "containers/Main";
 
 // Page Components
-import {
-  Text,
-  Card,
-  // Image,
-  Link as Anchor,
-  Grid,
-  Divider,
-} from "@geist-ui/react";
+import { Text, Card, Link as Anchor, Grid, Divider } from "@geist-ui/react";
 import Breadcrumbs from "components/Breadcrumbs";
 
 // Helpers
@@ -32,7 +25,6 @@ export async function getStaticProps() {
 }
 
 export default function Reti({ reti }) {
-  // const [css] = useStyletron();
   return (
     <Page
       id="reti"
@@ -43,7 +35,7 @@ export default function Reti({ reti }) {
       }}
     >
       <Grid.Container justify="center">
-        <Grid xs={22} sm={20}>
+        <Grid xs={22} sm={20} direction="column">
           <Breadcrumbs />
           <hgroup>
             <Text h1 style={{ lineHeight: 1.125 }}>
@@ -72,8 +64,16 @@ export default function Reti({ reti }) {
                     as={`reti/${rete.slug}`}
                     prefetch={false}
                   >
-                    <Anchor>
-                      <Image unsized src={`/img/reti/${rete.id}.webp`} />
+                    <Anchor
+                      style={{ textAlign: "center", alignSelf: "center" }}
+                    >
+                      <Image
+                        //@ts-ignore
+                        style={{ objectFit: "contain" }}
+                        src={`/img/reti/${rete.id}.webp`}
+                        height="280"
+                        width="280"
+                      />
                     </Anchor>
                   </Link>
 

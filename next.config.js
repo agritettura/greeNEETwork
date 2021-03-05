@@ -17,7 +17,7 @@ module.exports = withPWA({
     deviceSizes: [320, 440, 650, 900, 1280, 1920],
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    console.log("WebPack Conf : ", { buildId, dev, isServer, defaultLoaders });
+    // console.log("WebPack Conf : ", { buildId, dev, isServer, defaultLoaders });
 
     /// Add Jquery
     config.plugins.push(
@@ -51,4 +51,3 @@ module.exports = withPWA({
     return config;
   },
 });
-
