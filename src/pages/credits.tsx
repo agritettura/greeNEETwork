@@ -17,6 +17,7 @@ export default function Credits() {
         description:
           "I nomi delle persone e delle imprese che hanno contribuito alla realizzazione del progetto greeNEETwork",
       }}
+      style={{ display: "block" }}
     >
       <Grid.Container justify="center">
         <Grid xs={22} md={20} style={{ marginTop: "1rem" }}>
