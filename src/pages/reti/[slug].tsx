@@ -68,21 +68,25 @@ export default function Rete({ rete }) {
     >
       <Grid.Container gap={3} justify="center">
         <Grid xs={22} sm={6}>
-          <Image
-            unsized
-            alt={`Logo rete`}
-            src={`/img/reti/${rete.id}.webp`}
-            // style={{ maxHeight: "280px", width: "auto" }}
-          />
+          <div style={{ height: "100%", width: "100%" }}>
+            <Image
+              layout="intrinsic"
+              alt={`Logo rete`}
+              src={`/img/reti/${rete.id}.webp`}
+              height="300"
+              width="300"
+              objectFit="contain"
+            />
+          </div>
         </Grid>
-        <Grid xs={22} sm={14}>
+        <Grid xs={22} sm={14} direction="column">
           <Breadcrumbs separator="/" withBorders />
           <Text h1 style={{ lineHeight: 1.125 }}>
             {rete.nome}
           </Text>
           <Text>{rete.descrizione}</Text>
         </Grid>
-        <Grid xs={22} sm={20}>
+        <Grid xs={22} sm={20} direction="column">
           <pre>
             Tipologia : {rete.tipologia}
             <br />
@@ -95,7 +99,7 @@ export default function Rete({ rete }) {
           </pre>
         </Grid>
 
-        <Grid xs={22} sm={20}>
+        <Grid xs={22} sm={20} direction="column">
           <Text h3>Appartengono a questa rete :</Text>
           <Divider y={2} />
           <Grid.Container gap={2}>

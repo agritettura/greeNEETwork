@@ -294,7 +294,7 @@ const Esplora = ({ accessibilita, luoghi, servizi, tipologie }) => {
                     <Button
                       auto
                       ghost
-                      type="success"
+                      type="secondary"
                       onClick={handlePrev}
                       icon={<ChevronLeft />}
                       style={{ width: "50%" }}
