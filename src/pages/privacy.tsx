@@ -76,7 +76,7 @@ export default function Privacy() {
               Applicazione ha lo scopo di fornire il Servizio richiesto
               dall'Utente, oltre a qualsiasi altro scopo descritto nel presente
               documento e nella{" "}
-              <Link href="/cookies">
+              <Link prefetch={false} href="/cookies">
                 <Anchor>Politica sui Cookie</Anchor>
               </Link>
               , se disponibile.

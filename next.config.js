@@ -2,9 +2,17 @@ const withPWA = require("next-pwa");
 const runtimeCaching = require("./runtimeCache");
 
 module.exports = withPWA({
+  compression: true,
+
   env: {
     APP_URL: process.env.VERCEL_URL,
   },
+
+  images: {
+    domains: ["api.agritettura.org"],
+    deviceSizes: [320, 440, 650, 900, 1280, 1920],
+  },
+
   pwa: {
     disable: process.env.NODE_ENV !== "production",
     dest: "public",
@@ -12,10 +20,9 @@ module.exports = withPWA({
     publicExcludes: ["!video/UrbanoRurale_720p.webm"],
     runtimeCaching,
   },
-  images: {
-    domains: ["api.agritettura.org"],
-    deviceSizes: [320, 440, 650, 900, 1280, 1920],
-  },
+
+  reactStrictMode: true,
+
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // console.log("WebPack Conf : ", { buildId, dev, isServer, defaultLoaders });
 

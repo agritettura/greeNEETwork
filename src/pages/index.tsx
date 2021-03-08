@@ -6,15 +6,13 @@ import Page from "containers/Main";
 
 // Page Components
 import Image from "next/image";
-import { Grid, Text } from "@geist-ui/react";
+import { Grid, Row, Col, Text } from "@geist-ui/react";
 
-import { BlockReveal } from "components/Animations";
 import { Carousel } from "components/Carousel";
 import { Hero } from "components/Hero";
-// import { Slider } from "components/Slider";
 import SubFooter from "containers/Footer/SubFooter";
 
-import styles from "styles/index.module.sass";
+import styles from "styles/pages/index.module.sass";
 
 export default function Home() {
   // Generate Slider Image URLs
@@ -26,22 +24,18 @@ export default function Home() {
   return (
     <Page
       id="index"
-      className={styles.index}
+      className={styles.main}
       style={{ backgroundColor: "#0e1012" }}
     >
-      <Grid.Container justify="center" className={styles.hero}>
-        <Grid
-          xs={22}
-          md={20}
-          // lg={18}
-        >
+      <Grid.Container justify="center" gap={4}>
+        <Grid xs={22} md={20} className={styles.hero}>
           <Hero />
         </Grid>
       </Grid.Container>
 
       <Grid.Container justify="center" className={styles.section}>
         <Grid xs={22} md={18} lg={16} className={styles.infoBox}>
-          <BlockReveal dir="r2l">
+          <div className={styles.infoBox_inner}>
             <Text span>Informazioni</Text>
             <Text h3 className={styles.heading}>
               Il Parco in numeri
@@ -57,7 +51,7 @@ export default function Home() {
               Chiaiano, lo Scudillo, il vallone San Rocco, Capodimonte e la
               vigna di San Martino.
             </Text>
-          </BlockReveal>
+          </div>
         </Grid>
       </Grid.Container>
 
@@ -90,7 +84,7 @@ export default function Home() {
 
       <Grid.Container justify="center" className={styles.section}>
         <Grid xs={22} md={18} lg={16} className={styles.infoBox}>
-          <BlockReveal dir="l2r">
+          <div className={styles.infoBox_inner}>
             <Text h3 className={styles.heading}>
               Un parco da riconoscere
             </Text>
@@ -107,13 +101,13 @@ export default function Home() {
                 <span>Leggi le storie</span>
               </a>
             </Text>
-          </BlockReveal>
+          </div>
         </Grid>
       </Grid.Container>
 
       <Grid.Container justify="center" className={styles.section}>
         <Grid xs={22} md={18} lg={16} className={styles.infoBox}>
-          <BlockReveal dir="r2l">
+          <div className={styles.infoBox_inner}>
             <Text span>Mappa dei Luoghi</Text>
             <Text h3 className={styles.heading}>
               Un&apos;opportunità per la città e i suoi abitanti
@@ -133,7 +127,7 @@ export default function Home() {
                 <span>Esplora i luoghi sulla mappa</span>
               </a>
             </Text>
-          </BlockReveal>
+          </div>
         </Grid>
       </Grid.Container>
 

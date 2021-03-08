@@ -30,7 +30,7 @@ const SubFooter = () => {
         </div>
       </Grid>
       <Grid xs={24} sm={8}>
-        <Link href="/storie/scrivi">
+        <Link prefetch={false} href="/storie/scrivi">
           <div className={styles.top_item}>
             <Edit3 size={48} />
             <Text h4>Scrivi la tua storia</Text>
